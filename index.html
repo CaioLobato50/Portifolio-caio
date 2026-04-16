@@ -77,26 +77,6 @@
   }
   .nav-cta:hover { background: var(--terracota); }
 
-  .nav-download {
-    background: transparent;
-    color: var(--navy);
-    border: 1.5px solid rgba(25,25,44,0.25);
-    padding: 9px 20px;
-    border-radius: 40px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .nav-download:hover { border-color: var(--terracota); color: var(--terracota); }
-  .nav-actions { display: flex; align-items: center; gap: 10px; }
-  @media (max-width: 768px) { .nav-download { display: none; } }
-
   /* HERO */
   .hero {
     min-height: 100vh;
@@ -595,10 +575,7 @@
 
 <nav>
   <a href="#" class="nav-logo">Caio Lobato</a>
-  <div class="nav-actions">
-    <a href="https://wa.me/5541987813184?text=Oi%20Caio%2C%20vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar!" target="_blank" class="nav-download">💬 Falar comigo →</a>
-    <a href="#baixar" onclick="handleDownload(event)" class="nav-cta">⬇ Baixar apresentação</a>
-  </div>
+  <a href="https://wa.me/5541987813184" target="_blank" class="nav-cta">Falar comigo →</a>
 </nav>
 
 <!-- HERO -->
@@ -660,7 +637,7 @@
             <span class="tag">GSAP</span><span class="tag">Meta Pixel</span><span class="tag">GTM</span><span class="tag">Mobile-first</span>
           </div>
           <div class="card-footer">
-            <a class="card-link" href="https://caiolobatogestordetrafego.netlify.app/" target="_blank">Ver ao vivo →</a>
+            <a class="card-link" href="https://caiolobatogestordetrafego.netlify.app" target="_blank">Ver ao vivo →</a>
           </div>
         </div>
       </div>
@@ -856,7 +833,7 @@
     <div class="sobre-text">
       <div class="section-label">Sobre</div>
       <h2>Tráfego pago<br>e sistemas que <em>funcionam</em></h2>
-      <p>Sou Caio Lobato — gestor de tráfego pago com foco em Meta Ads e Google Ads. Além das campanhas, construo ferramentas, dashboards e sites que automatizam processos e entregam resultado.</p>
+      <p>Sou Caio Lobato — gestor de tráfego pago e MEI com foco em Meta Ads e Google Ads. Além das campanhas, construo ferramentas, dashboards e sites que automatizam processos e entregam resultado.</p>
       <p>Tudo que está neste portfólio foi criado do zero para resolver problemas reais — meus ou de clientes.</p>
       <div class="skills-list">
         <div class="skill-item"><div class="skill-dot"></div> Meta Ads</div>
@@ -877,26 +854,10 @@
   <a class="cta-btn" href="https://wa.me/5541987813184" target="_blank">
     💬 Falar no WhatsApp
   </a>
-  <br><br>
-  <a class="cta-btn" onclick="handleDownload(event)" href="#" style="background:transparent;border:1.5px solid rgba(244,237,228,0.3);font-size:13px;padding:12px 28px;margin-top:0;">
-    ⬇ Baixar apresentação
-  </a>
 </div>
 
-<!-- MODAL DOWNLOAD -->
-<div id="modal-download" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(25,25,44,0.7);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
-  <div style="background:var(--cream);border-radius:20px;padding:2.5rem;max-width:420px;width:90%;text-align:center;position:relative;">
-    <button onclick="document.getElementById('modal-download').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);">✕</button>
-    <div style="font-size:48px;margin-bottom:1rem;">📄</div>
-    <h3 style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--navy);margin-bottom:0.75rem;">Apresentação em breve</h3>
-    <p style="font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:1.5rem;">Estou preparando um PDF com os meus principais projetos e resultados. Me chama no WhatsApp e te mando direto!</p>
-    <a href="https://wa.me/5541987813184?text=Oi%20Caio%2C%20vi%20seu%20portf%C3%B3lio%20e%20quero%20receber%20sua%20apresenta%C3%A7%C3%A3o!" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--terracota);color:var(--cream);text-decoration:none;padding:12px 28px;border-radius:40px;font-size:14px;font-weight:500;font-family:'DM Sans',sans-serif;transition:background 0.2s;">
-      💬 Pedir apresentação
-    </a>
-  </div>
-
 <footer>
-  <p>© 2025 Caio Lobato · Curitiba, PR · <a href="https://caiolobatogestordetrafego.netlify.app/" target="_blank" style="color:var(--muted);text-decoration:underline;">caiolobatogestordetrafego.netlify.app</a></p>
+  <p>© 2025 Caio Lobato · Curitiba, PR · caiolobatogestordetrafego.netlify.app</p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -959,15 +920,6 @@ function filter(cat, btn) {
     if (match) {
       gsap.fromTo(card, { opacity:0, y:16 }, { opacity:1, y:0, duration:0.4, ease:'power3.out' });
     }
-  });
-}
-/* DOWNLOAD MODAL */
-function handleDownload(e) {
-  e.preventDefault();
-  const modal = document.getElementById('modal-download');
-  modal.style.display = 'flex';
-  modal.addEventListener('click', function(ev) {
-    if (ev.target === modal) modal.style.display = 'none';
   });
 }
 </script>
